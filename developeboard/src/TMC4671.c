@@ -5,6 +5,8 @@
  *      Author: ed
  */
 #include "TMC4671.h"
+//#include <SPI.h>
+#include "../developeboard.h"
 
 #define STATE_NOTHING_TO_DO    0
 #define STATE_START_INIT       1

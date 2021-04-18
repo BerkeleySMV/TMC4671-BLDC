@@ -12,18 +12,18 @@
 #include "TMC4671_Register.h"
 #include "TMC4671_Constants.h"
 #include "TMC4671_Fields.h"
-#include <SPI.h>
+
 
 // spi access
 #define BIT_0_TO_15   0
 #define BIT_16_TO_31  1
 
 // Helper macros
-#define TMC4671_FIELD_READ(tdef, address, mask, shift) \
-	FIELD_GET(tmc4671_readInt(tdef, address), mask, shift)
-#define TMC4671_FIELD_UPDATE(tdef, address, mask, shift, value) \
-	(tmc4671_writeInt(tdef, address, FIELD_SET(tmc4671_readInt(tdef, address), mask, shift, value)))
-
+#define TMC4671_FIELD_READ(tdef, address, mask, shift) FIELD_GET(tmc4671_readInt(tdef, address), mask, shift)
+#define TMC4671_FIELD_UPDATE(tdef, address, mask, shift, value) (tmc4671_writeInt(tdef, address, FIELD_SET(tmc4671_readInt(tdef, address), mask, shift, value)))
+#ifdef __cplusplus
+extern "C" {
+#endif
 int32_t tmc4671_readInt(uint8_t motor, uint8_t address);
 void tmc4671_writeInt(uint8_t motor, uint8_t address, int32_t value);
 uint16_t tmc4671_readRegister16BitValue(uint8_t motor, uint8_t address, uint8_t channel);
@@ -101,4 +101,7 @@ void tmc4671_setPositionPI(uint8_t motor, uint16_t pParameter, uint16_t iParamet
 
 int32_t tmc4671_readFieldWithDependency(uint8_t motor, uint8_t reg, uint8_t dependsReg, uint32_t dependsValue, uint32_t mask, uint8_t shift);
 
+#ifdef __cplusplus
+}
+#endif
 #endif /* TMC_IC_TMC4671_H_ */

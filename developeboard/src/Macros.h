@@ -27,10 +27,8 @@
 #define ARRAY_SIZE(x) (sizeof(x)/sizeof(x[0]))
 
 // Generic mask/shift macros
-#define FIELD_GET(data, mask, shift) \
-	(((data) & (mask)) >> (shift))
-#define FIELD_SET(data, mask, shift, value) \
-	(((data) & (~(mask))) | (((value) << (shift)) & (mask)))
+#define FIELD_GET(data, mask, shift) (((data) & (mask)) >> (shift))
+#define FIELD_SET(data, mask, shift, value) (((data) & (~(mask))) | (((value) << (shift)) & (mask)))
 
 // Register read/write/update macros using Mask/Shift:
 #define FIELD_READ(read, motor, address, mask, shift) \
