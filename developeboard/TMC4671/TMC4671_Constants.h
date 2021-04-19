@@ -8,7 +8,7 @@
 #ifndef TMC_IC_TMC4671_TMC4671_CONSTANTS_H_
 #define TMC_IC_TMC4671_TMC4671_CONSTANTS_H_
 
-#include "tmc/helpers/Constants.h"
+#include "Constants.h"
 
 #define TMC4671_MOTORS 1
 

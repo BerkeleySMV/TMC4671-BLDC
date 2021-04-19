@@ -8,10 +8,11 @@
 #ifndef TMC_IC_TMC4671_H_
 #define TMC_IC_TMC4671_H_
 
-#include "tmc/helpers/API_Header.h"
+#include "API_Header.h"
 #include "TMC4671_Register.h"
 #include "TMC4671_Constants.h"
 #include "TMC4671_Fields.h"
+#include <SPI.h>
 
 // spi access
 #define BIT_0_TO_15   0
